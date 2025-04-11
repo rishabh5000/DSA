@@ -1,0 +1,35 @@
+SQL
+
+#String functions
+
+select first_name, upper(first_name), lower(first_name), length(first_name), left(first_name, 4), right(first_name, 4), substring(birth_date, 9,2) as "birth_date", concat(first_name, ' ',last_name) from employee_demographics;
+
+
+SQL
+
+Select
+from
+where - and or between
+like - _ or %
+create db
+create table(id int prim key, name varchar(50),)
+insert into table values(---)
+alter table - add column/update column 
+group by
+having
+limit
+as
+inner join
+left join
+right join
+case - when then - end
+order by 
+asc desc
+agg - min max count sum 
+string - upper lower length left right trim substring
+subquery
+cte - 
+event - instead of group by use -> over(partition by - )
+event - over(order by --- ) - row number() / rank() / dense_rank()
+create temporary table 
+create trigger name before insert/update in table for each row set
