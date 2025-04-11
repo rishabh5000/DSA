@@ -1,0 +1,100 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    
+    int hash[n+1] = {0};   
+    
+    for(int i=0; i<n; i++){
+        hash[arr[i]]++;
+    }
+    
+    int q;
+    cin>>q;
+    while(q--){
+        int num;
+        cin>>num;
+        
+        //cout<<hash[num]<<endl;
+        cout<<hash[num]<<endl;
+    }
+    return 0;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    string s;
+    cin>>s;
+    int q;
+    cin>>q;
+    int hash[26] = {0};
+    
+    
+    for(int i=0; s[i]!='\0'; i++){
+        int idx = s[i] - 'a';
+        hash[idx]++; 
+    }
+    
+    while(q--){
+        char c;
+        cin>>c;
+        int hash_idx = c - 'a';
+
+        cout<< hash[hash_idx]<<endl; 
+    }
+    return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    
+    //int hash[n+1] = {0};
+    unordered map<int, int> mpp;    
+    
+    for(int i=0; i<n; i++){
+        mpp[arr[i]]++;
+    }
+    
+    int q;
+    cin>>q;
+    while(q--){
+        int num;
+        cin>>num;
+        
+        //cout<<hash[num]<<endl;
+        cout<<mpp[num]<<endl;
+    }
+    return 0;
+}
