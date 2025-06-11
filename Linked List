@@ -6,64 +6,113 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-struct Node{
-    int data;
-    Node* next;
-    
-    Node(){
-        this->data = 0;
-        this->next = NULL;
-    }
-    Node(int data){
-        this->data = data;
-        this->next = NULL;
-    }
-    Node(int data, Node* next){
-        this->data = data;
-        this->next = next;
-    }
+struct Node {
+	int data;
+	Node* next;
+
+	Node() {
+		this->data = 0;
+		this->next = NULL;
+	}
+	Node(int data) {
+		this->data = data;
+		this->next = NULL;
+	}
+	Node(int data, Node* next) {
+		this->data = data;
+		this->next = next;
+	}
 };
 
-Node* convert(vector<int> arr){
-    Node* head = new Node(arr[0]);
-    Node* p = head;
-    
-    for(int i=1; i<arr.size(); i++){
-        Node* temp = new Node(arr[i]);
-        p->next = temp;
-        p = p->next;
+Node* convert(vector<int> arr) {
+	Node* head = new Node(arr[0]);
+	Node* p = head;
+
+	for(int i=1; i<arr.size(); i++) {
+		Node* temp = new Node(arr[i]);
+		p->next = temp;
+		p = p->next;
+	}
+	return head;
+}
+
+int count(Node* head) {
+	Node* temp = head;
+	int count = 0;
+	while(temp) {
+		count++;
+		temp = temp->next;
+	}
+	return count;
+}
+
+int search(Node* head, int k) {
+	Node* temp = head;
+	while(temp) {
+		if(temp->data == k) return 1;
+		temp = temp->next;
+	}
+	return 0;
+}
+
+void traverse(Node* head){
+    Node* temp = head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp = temp->next;
     }
+    cout<<endl;
+}
+
+Node* removeHead(Node* head) {
+	Node* temp = head;
+	head = head->next;
+	free(temp);
+
+	return head;
+}
+
+Node* removeLast(Node* head){
+    Node* temp = head;
+    Node* p = temp->next;
+    
+    while(p->next){
+        p = p->next;
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    free(p);
+    
     return head;
 }
 
-int count(Node* head){
-    Node* temp = head;
-    int count = 0;
-    while(temp){
-        count++;
-        temp = temp->next;
-    }
-    return count;
-}
-
-int search(Node* head, int k){
+Node* removeAtPos(Node* head, int pos){
+    if(head == NULL) return head;
+    
     Node* temp = head;
     while(temp){
-        if(temp->data == k) return 1;
         temp = temp->next;
     }
-    return 0;
 }
 
 int main()
 {
-    vector<int> arr = {2,3,4,5,6,6,5,3,2,1};
-    Node* head = convert(arr);
-    cout<<head->data<<endl;
+	vector<int> arr = {2,3,4,5,6,6,5,3,2,1};
+	Node* head = convert(arr);
+
+	cout<<head->data<<endl;
+	cout<<count(head)<<endl;
+	cout<<search(head, 5)<<endl;
+
+	traverse(head);
+	
+	Node* newHead = removeHead(head);
+	cout<<newHead->data<<endl;
+	traverse(newHead);
+	
+	removeLast(head);
+    traverse(head);
     
-    cout<<count(head)<<endl;
-    
-    cout<<search(head, 15)<<endl;
-    
-    return 0;
+
+	return 0;
 }
