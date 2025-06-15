@@ -127,6 +127,22 @@ Node* convert2DLL(vector<int> arr){
     return head;
 }
 
+// REVERSE //
+Node* reverseDLL(Node* head){
+    Node* curr = head;
+    Node* last = NULL;
+
+    while(curr){
+        //swap next and last
+        last = curr->prev;
+        curr->prev = curr->next;
+        curr->next = last;
+
+        curr = curr->prev;
+    }
+        return last->prev;
+}
+
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10};
     Node* head = convert2DLL(arr);
