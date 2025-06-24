@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string convert2Binary(int n){
+    string res = "";
+    while(n!=0){
+        res += (n%2) + '0';
+        
+        n = n/2;
+    }
+    reverse(res.begin(), res.end());
+    return res;
+}
+
+int convert2Int(string S){
+    int len = S.length();
+    int sum = 0;
+    
+    for(int i = len-1; i>=0; i--){
+        sum += (S[len - i - 1] - '0') * pow(2, i);
+    }
+    return sum;
+}
+
+int main(){
+    cout<<convert2Binary(54)<<endl;
+    cout<<convert2Int("110110")<<endl;
+    
+    return 0;
+}
