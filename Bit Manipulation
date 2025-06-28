@@ -46,6 +46,9 @@ string twosComplement(string S){
             break;
         }
     }
+    if(carry == 1){
+        S = '1' + S;
+    }
     return S;
 }
 
