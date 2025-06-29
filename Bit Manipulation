@@ -52,6 +52,25 @@ string twosComplement(string S){
     return S;
 }
 
+void swap(int a, int b){
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    
+    cout<<a<<" "<<b<<endl;
+}
+
+bool ithBitcheck1(int n, int i){
+    if((n & (1<<i)) != 0) return true;
+    else return false;
+}
+
+bool ithBitcheck2(int n, int i){
+    if(((n>>i) & 1) != 0) return true;
+    else return false;
+    
+}
+
 int main(){
     cout<<convert2Binary(54)<<endl;
     cout<<convert2Int("110110")<<endl;
