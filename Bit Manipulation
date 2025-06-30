@@ -71,9 +71,58 @@ bool ithBitcheck2(int n, int i){
     
 }
 
+int setithBit(int n, int i){
+    //1101,1
+    return (n | (1<<i));    
+}
+
+int clearithBit(int n, int i){
+    //1101,1
+    return (n & ~(1<<i));    
+}
+
+int toggleithBit(int n, int i){
+    //1101,1
+    return (n ^ (1<<i));    
+}
+
+int removeLastSetBit(int n){
+    return n & (n-1);
+}
+
+bool checkPowerof2(int n){
+    //has only 1 set bit
+    return (n!=0) && ((n & (n-1)) == 0);
+}
+
+bool oddEven(int n){
+    return (n & 1);
+}
+
+int countSetBits(int n){
+    int count = 0;
+    
+    while(n!=0){
+        if(n & 1) count++;
+        n = n>>1;
+    }
+    return count;
+}
+
+
 int main(){
     cout<<convert2Binary(54)<<endl;
     cout<<convert2Int("110110")<<endl;
+
+//
+
+    cout<<setithBit(13, 1)<<endl;
+    cout<<clearithBit(13, 0)<<endl;
+    cout<<toggleithBit(13, 3)<<endl;
+    cout<<removeLastSetBit(16)<<endl;
+    cout<<(checkPowerof2(16) ? "true" : "false")<<endl;
+    cout<<oddEven(15)<<endl;
+    cout<<countSetBits(15)<<endl;
     
     return 0;
 }
