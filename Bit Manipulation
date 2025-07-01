@@ -145,6 +145,11 @@ int countSetBits(int n){
     return count;
 }
 
+int minBitFlip(int start, int goal){
+    int ans = (start ^ goal);
+    
+    return countSetBit(ans);
+}
 
 int main(){
     cout<<convert2Binary(54)<<endl;
@@ -159,6 +164,7 @@ int main(){
     cout<<(checkPowerof2(16) ? "true" : "false")<<endl;
     cout<<oddEven(15)<<endl;
     cout<<countSetBits(15)<<endl;
+    cout<<minBitFlip(10, 7)<<endl;
     
     return 0;
 }
