@@ -1,0 +1,27 @@
+sort(v.begin(), v.end())
+reverse(v.begin(), v.end())
+rotate(v.begin(), mid, v.end())
+
+min(a,b) , max(a,b)
+min_element(v.begin(), v.end())
+max_element(v.begin(), v.end())
+
+count(v.begin(), v.end(), x)
+find(v.begin(), v.end(), x)
+
+binary_search(v.begin(), v.end(), x)
+lower_bound(v.begin(), v.end(), x)
+upper_bound(v.begin(), v.end(), x)
+
+next_permutation(v.begin(), v.end())
+prev_permutation(v.begin(), v.end())
+
+accumulate(v.begin(), v.end(), 0)
+
+is_sorted(v.begin(), v.end())
+
+gcd(a,b)
+lcm(a,b)
+abs(x)
+pow(a,b)
+sqrt(x)
