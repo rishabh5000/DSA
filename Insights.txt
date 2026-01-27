@@ -1,0 +1,14 @@
+Subset / subsequence - backtracking
+matrix - graph bfs
+next greater / next previous - monotonous stack
+precomputed result - left/right ele sum -> prefix sum
+subarray props - subarray sum = k, subarray sum divisible by k, longest subarray with sum = 0, count subarrays with equal 0s and 1s, number of nice subarrays -> Prefix sum + HASHING
+
+
+ARRAY -
+sorting
+hashing
+prefix sum
+2ptr
+sliding window
+binary search
