@@ -3,10 +3,24 @@ matrix - graph bfs
 next greater / next previous - monotonous stack
 precomputed result - left/right ele sum -> prefix sum
 
-
-subarray props - subarray sum = k, subarray sum divisible by k, longest subarray with sum = 0, count subarrays with equal 0s and 1s, number of nice subarrays -> Prefix sum + HASHING
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+subarray problems - subarray sum = k, subarray sum divisible by k, longest subarray with sum = 0, count subarrays with equal 0s and 1s, number of nice subarrays -> Prefix sum + HASHING
 724 → 1991 → 303 → 238 → 2270 → 560 → 974 → 525 →1590 -> 523 → 1094 → 1109 → 1589
 subarray
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+RANGES QUES - jab bhi range ki baat aati hai - think difference array / sweep line problem
+  DIFFERENCE ARRAY - diff[l] += x and diff[r] -= x
+
+  3355. Zero Array Transformation I
+  1109. Corporate Flight Bookings
+  1094. Car Pooling
+  1854. Maximum Population Year
+  2381. Shifting Letters II
+  3356. Zero Array Transformation II
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ARRAY -
 sorting
