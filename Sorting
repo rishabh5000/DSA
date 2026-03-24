@@ -177,4 +177,42 @@ public:
                           Quick Sort
 /////////////////////////////////////////////////////////////////////////
 
+class Solution {
+public:
+    int pivot(vector<int>& arr, int low, int high){
+        int p = arr[low];
+        int i = low;
+        int j = high;
+
+        while(i < j){
+            while(arr[i]<=p && i<=high-1){
+                i++;
+            }
+
+            while(arr[j]>p && j>=low+1){
+                j--;
+            }
+
+            if(i<j) swap(arr[i], arr[j]);
+        }
+
+        swap(arr[low], arr[j]);
+
+        return j;
+    }
+
+    void QS(vector<int>& arr, int low, int high){
+        if(low >= high) return;
+
+        int pivotIdx = pivot(arr, low, high);
+        QS(arr, low, pivotIdx-1);
+        QS(arr, pivotIdx+1, high);
+    }
+
+    vector<int> quickSort(vector<int>& nums) {
+        QS(nums, 0, nums.size()-1);
+
+        return nums;
+    }
+};
 
